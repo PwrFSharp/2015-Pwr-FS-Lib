@@ -1,5 +1,5 @@
 ﻿namespace Pwr.BT.Test.MatcherAndTR
-    module List =    
+    module List =  
       open System
       open System.Collections
       open NUnit.Framework

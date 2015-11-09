@@ -18,7 +18,7 @@
         in help(aList1,aList2,[])
 
       let rec flatten aList1 = 
-          match aList1 with      
+          match aList1 with
           |h1::t1 -> append h1 ( List.head t1 )
           |[] -> []
 
