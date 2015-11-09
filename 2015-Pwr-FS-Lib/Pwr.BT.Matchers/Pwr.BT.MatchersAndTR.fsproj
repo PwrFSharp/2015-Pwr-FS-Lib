@@ -67,6 +67,8 @@
     <Compile Include="Predicate.fs" />
     <Compile Include="Test_Predicate.fs" />
     <Compile Include="ListOfList.fs" />
+    <Compile Include="List.fs" />
+    <Compile Include="Test_List.fs" />
     <Compile Include="Test_ListOfList.fs" />
   </ItemGroup>
   <PropertyGroup>
