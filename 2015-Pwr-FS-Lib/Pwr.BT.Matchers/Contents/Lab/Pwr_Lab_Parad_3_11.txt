@@ -1,0 +1,32 @@
+﻿Paradygmaty programowania, lista 3, 29.10.2019. Czwartek 11:15
+
+WAÅ»NE1: Do kaÅ¼dego zadania przygotuj 3-5 testÃ³w sprawdzajÄ…cych poprawnoÅ›Ä‡ dziaÅ‚ania!
+WAÅ»NE2: Nie wolno stosowaÄ‡ funkcji bibliotecznych (np. "length", "reverse", "append") o zÅ‚oÅ¼onoÅ›ci wiÄ™kszej, niÅ¼ O(1).
+        W przypadku, gdy zachodzi koniecznoÅ›Ä‡ ich uÅ¼ycia naleÅ¼y przygotowaÄ‡ wÅ‚asnÄ… implementacjÄ™.
+WAÅ»NE3: WszÄ™dzie, gdzie to moÅ¼liwe naleÅ¼y uÅ¼ywaÄ‡ rekurencji ogonowej.
+
+1) Napisz funkcjÄ™ rozdzielajÄ…cÄ… listÄ™ wejÅ›ciowÄ… na trzy podlisty.
+   W pierwszej podliÅ›cie majÄ… siÄ™ znaleÅºÄ‡ wszystkie elementy o indeksach mod 3 = 0.
+   W drugiej podliÅ›cie majÄ… siÄ™ znaleÅºÄ‡ wszystkie elementy o indeksach mod 3 = 1.
+   Na trzeciej podliÅ›cie majÄ… siÄ™ znaleÅºÄ‡ pozostaÅ‚e elementy.
+   PorzÄ…dek elementÃ³w musi byÄ‡ zachowany. Wynik zwrÃ³Ä‡ w postaci trÃ³jki list.
+
+   Napisz funkcjÄ™ przy uÅ¼yciu rekurencji ogonowej i nieogonowej. PorÃ³wnaj!
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: indeksy [5;4;3;2];;
+   wynik    : ([5;2],[4],[3])
+
+   Punkty: 12 (jÄ™zyk OCaml)
+
+2) Napisz funkcjÄ™ sumujÄ…cÄ… odpowiadajÄ…ce sobie elementy z dwÃ³ch list.
+   W przypadku braku odpowiadajÄ…cego elementu przyjmij jego wartoÅ›Ä‡ jako 0.
+   ZwrÃ³Ä‡ szczegÃ³lnÄ… uwagÄ™ na optymalnoÅ›Ä‡ zÅ‚oÅ¼onoÅ›ci obliczeniowej i pamiÄ™ciowej.
+
+   Napisz funkcjÄ™ przy uÅ¼yciu rekurencji ogonowej i nieogonowej. PorÃ³wnaj!
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: sumuj [1;2;3] [4;5;6;7;8];;
+   wynik    : [5;7;9;7;8]
+
+   Punkty: 8 (jÄ™zyk Scala)
