@@ -1,0 +1,46 @@
+﻿Paradygmaty programowania, lista 1, 15.10.2015. CZ.11
+
+WAÅ»NE: Do kaÅ¼dego zadania przygotuj 3-5 testÃ³w sprawdzajÄ…cych poprawnoÅ›Ä‡ dziaÅ‚ania!
+
+1) Napisz funkcjÄ™, ktÃ³ra na wejÅ›ciu przyjmuje jeden parametr: listÄ™ liczb rzeczywistych.
+   Na wyjÅ›ciu funkcja zwraca jednÄ… liczbÄ™, bÄ™dÄ…cÄ… sumÄ… wszystkich liczb z listy.
+   W przypadku listy pustej zwrÃ³cony powinien zostaÄ‡ element neutralny dziaÅ‚ania.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: suma [5.;3.;2.];;
+   wynik    : 10.
+
+   Punkty: 5 (jezyk OCaml)
+
+2) Napisz funkcjÄ™, ktÃ³ra na wejÅ›ciu przyjmuje czteroelementowÄ… krotkÄ™ liczb rzeczywistych,
+   a na wyjÅ›ciu zwraca sumÄ™ tych liczb.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: sumak (3.,2.,5.,1.);;
+   wynik    : 11.
+
+   Punkty: 5 (jezyk OCaml)
+
+3) Napisz funkcjÄ™, ktÃ³ra na wejÅ›ciu przyjmuje dwa parametry: listÄ™ napisÃ³w oraz napis bÄ™dÄ…cy separatorem.
+   Na wyjÅ›ciu zwraca pojedynczy napis bÄ™dÄ…cy poÅ‚Ä…czeniem napisÃ³w wejÅ›ciowych oddzielonych od siebie separatorem.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: polacz ["To"; "jest"; "napis"] "-";;
+   wynik    : "To-jest-napis"
+
+   Punkty: 5 (jÄ™zyk OCaml)
+
+4) Napisz funkcjÄ™, ktÃ³ra na wejÅ›ciu przyjmuje dwa parametry: listÄ™ liczb caÅ‚kowitych oraz liczbÄ™.
+   Na wyjÅ›ciu zwraca wartoÅ›Ä‡ logicznÄ….
+   Funkcja zwraca wartoÅ›Ä‡ "prawda" jeÅ›li wszystkie liczby z listy sÄ… mniejsze niÅ¼ liczba podana
+   w drugim parametrze. W przeciwnym przypadku funkcja zwraca wartoÅ›Ä‡ "faÅ‚sz".
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: mniejsze [1;2;3;4] 5;;
+   wynik    : true
+   wywoÅ‚anie: mniejsze [6;1;3;2] 6;;
+   wynik    : false
+
+   Punkty: 5 (jezyk Scala)
+
+   https://eportal.ii.pwr.edu.pl/w08/BOARD/Paradowski.Mariusz/Paradygmaty.Programowania/lista1-cz11.txt
