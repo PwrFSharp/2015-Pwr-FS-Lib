@@ -1,0 +1,28 @@
+﻿Paradygmaty programowania, lista 5, 19.11.2015. Czwartek 13:15.
+
+WAÅ»NE1: Do kaÅ¼dego zadania przygotuj 3-5 testÃ³w sprawdzajÄ…cych poprawnoÅ›Ä‡ dziaÅ‚ania!
+WAÅ»NE2: WszÄ™dzie, gdzie to moÅ¼liwe naleÅ¼y uÅ¼ywaÄ‡ rekurencji ogonowej.
+WAÅ»NE3: Wolno uÅ¼ywaÄ‡ nastÄ™pujÄ…cych funkcji bibliotecznych o zÅ‚oÅ¼onoÅ›ci wiÄ™kszej, niÅ¼ O(1):
+        reverse, foldleft, map, filter, append.
+
+1) Napisz funkcjÄ™ eval realizujÄ…cÄ… prosty ewaluator wyraÅ¼eÅ„ arytmetycznych oparty na maszynie stosowej.
+   Rozkazy do ewaluatora podane sÄ… jako lista elementÃ³w typu:
+
+   type eval = Num of float | Add | Sub | Mul | Div;;
+
+   Do reprezentacji stosu uÅ¼yj typu "float list".
+
+   PrzykÅ‚ad:
+
+   let instr1 = [Num 5.; Num 3.; Add; Num 2.; Add];;
+   daje wynik: 10.
+
+   let instr2 = [Num 5.; Num 3.; Add; Add];;
+   zgÅ‚asza bÅ‚Ä…d (wyraÅ¼enie jest niepoprawne, druga operacja Add nie ma wystarczajÄ…co argumentÃ³w)
+
+   Punkty: 12 (jÄ™zyk Ocaml). UwaÅ¼aj na ostrzeÅ¼enia kompilatora (utrata punktÃ³w)!
+
+2) Napisz funkcjÄ™ mnoÅ¼Ä…cÄ… wszystkie wartoÅ›ci znajdujÄ…ce siÄ™ w wÄ™zÅ‚ach drzewa zdefiniowanego
+   na wykÅ‚adzie 4, strona 19.
+
+   Punkty: 8 (jÄ™zyk Scala).
