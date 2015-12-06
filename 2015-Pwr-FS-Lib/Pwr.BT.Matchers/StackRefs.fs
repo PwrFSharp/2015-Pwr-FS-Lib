@@ -15,9 +15,6 @@
         |[] -> aStack:=[]
         |_ -> aStack:= (rev (List.tail (rev !aStack)))
 
-    let empty aVal =
-        EagerList.isEmpty aVal
-
 //    let popLRefFun laStack = function 
 //        |LNil -> laStack:= function () -> []
 //        |LCons(_) -> laStack:= function () -> rev (List.tail (revF laStack()))

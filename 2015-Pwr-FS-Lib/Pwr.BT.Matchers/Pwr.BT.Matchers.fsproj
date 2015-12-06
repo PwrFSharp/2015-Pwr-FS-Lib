@@ -62,11 +62,11 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Signatures\SigEagerList.fsi" />
-    <Compile Include="Modules\EagerList.fs" />
+    <Compile Include="Tuple_Operations.fs" />
     <Compile Include="ListOfList.fs" />
     <None Include="packages.config" />
     <Compile Include="Predicates.fs" />
+    <Compile Include="ListEager.fs" />
     <Compile Include="Types.fs" />
     <Compile Include="List_Operations.fs" />
     <Compile Include="List_Lazy_Operations.fs" />
@@ -87,7 +87,7 @@
     <None Include="Scripts\load-references-debug.fsx" />
     <None Include="Scripts\load-project-debug.fsx" />
     <Compile Include="Test_RefToLists.fs" />
-    <Compile Include="ListEager.fs" />
+    <Compile Include="Test_Lab1_eList.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

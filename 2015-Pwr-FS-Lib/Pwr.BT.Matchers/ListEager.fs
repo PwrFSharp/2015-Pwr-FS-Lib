@@ -1,4 +1,4 @@
-﻿namespace Pwr.BT.Collections.List.Own
+﻿namespace Pwr.BT.Collections.Own
     module ListEager =
 
     type 'a ListE =
@@ -25,7 +25,7 @@
             function
             |EmptyE -> acc
             |BodyE (hd,tl) -> hSum (hd+acc) tl
-        in hSum 0 eList
+        in hSum 0. eList
 
     let rec eToNormal eList=
         let rec hNormal acc=
@@ -40,3 +40,11 @@
             |[] -> EmptyE
             |hd:: tl -> BodyE( hd, eToEager tl )
         in hEager EmptyE nList
+
+    let rec eMergInSepS lETape lEInfix=
+        let rec hMerge acc =
+            function
+            |EmptyE  -> acc
+            |BodyE( h, EmptyE) -> hMerge (acc^ h) EmptyE
+            |BodyE( h, t ) -> hMerge (acc^ h^ eHead lEInfix) t
+        in hMerge "" lETape
