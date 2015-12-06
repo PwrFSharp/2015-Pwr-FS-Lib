@@ -3,12 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pwr.BT.MatchersAndTR", "Pwr.BT.Matchers\Pwr.BT.MatchersAndTR.fsproj", "{2DA9565B-3AC2-48C8-BFCB-98E822D0D458}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D5BC621-B908-48DD-BA2F-6798A454B1F7}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pwr.BT.Matchers", "Pwr.BT.Matchers\Pwr.BT.Matchers.fsproj", "{2DA9565B-3AC2-48C8-BFCB-98E822D0D458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
