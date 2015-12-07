@@ -136,4 +136,84 @@
     
       Assert.True(_reachedLogic)
 
+    [<Test>]
+    let ePartOrdCompare_pListE_pListE_1() =
+      let tapeListE = BodyE( 1, BodyE( 2, BodyE( 3, BodyE( 4, EmptyE ))))
+      let comparedListE = BodyE( 5, EmptyE)
+
+      let _expectedVal = true
+      let _reachedVal = ePartOrdCompare tapeListE comparedListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let ePartOrdCompare_pListE_pListE_2() =
+      let tapeListE = BodyE( 6, BodyE( 1, BodyE( 3, BodyE( 2, EmptyE ))))
+      let comparedListE = BodyE( 6, EmptyE)
+
+      let _expectedVal = false
+      let _reachedVal = ePartOrdCompare tapeListE comparedListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let ePartOrdCompare_pListE_pListE_3() =
+      let tapeListE = BodyE( "aa", BodyE( "ab", BodyE( "ac", BodyE( "ad", EmptyE ))))
+      let comparedListE = BodyE( "bb", EmptyE)
+
+      let _expectedVal = true
+      let _reachedVal = ePartOrdCompare tapeListE comparedListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let third3_AnyTup3_Any_1() =
+      let tapeTup3 = (3.,2.,5.)
+        
+      let _expectedVal = 5.
+      let _reachedVal = third3 tapeTup3
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let third3_AnyTup3_Any_2() =
+      let tapeTup3 = ("ab",2.,3)
+        
+      let _expectedVal = 3
+      let _reachedVal = third3 tapeTup3
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let third3_AnyTup3_Any_3() =
+      let tapeTup3 = (0,1,'a')
+        
+      let _expectedVal = 'a'
+      let _reachedVal = third3 tapeTup3
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let genListIncl_Int_Int_1() =
+      let tapeBeginE = BodyE( 4, EmptyE )
+      let tapeEndE = BodyE( 8, EmptyE )
+
+      let _expectedVal =  BodyE( 4, BodyE( 5, BodyE( 6, BodyE( 7, BodyE( 8, EmptyE ) ))))
+      let _reachedVal = genListIncl tapeBeginE tapeEndE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
 

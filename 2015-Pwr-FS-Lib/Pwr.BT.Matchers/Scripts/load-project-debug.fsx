@@ -1,10 +1,10 @@
 // Warning: generated file; your changes could be lost when a new file is generated.
 #I __SOURCE_DIRECTORY__
 #load "load-references-debug.fsx"
-#load "../Tuple_Operations.fs"
+#load "../ListEager.fs"
+      "../Tuple_Operations.fs"
       "../ListOfList.fs"
       "../Predicates.fs"
-      "../ListEager.fs"
       "../Types.fs"
       "../List_Operations.fs"
       "../List_Lazy_Operations.fs"
@@ -22,3 +22,4 @@
       "../Test_LazyLists.fs"
       "../Test_RefToLists.fs"
       "../Test_Lab1_eList.fs"
+      "../ConsultationsQuestions.fs"
