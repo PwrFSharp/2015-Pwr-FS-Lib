@@ -87,11 +87,12 @@
     <None Include="Scripts\load-project.fsx" />
     <None Include="Scripts\load-references-debug.fsx" />
     <None Include="Scripts\load-project-debug.fsx" />
-    <Compile Include="Test_Tuples_Operations.fs" />
     <Compile Include="ConsultationsQuestions.fs" />
+    <Compile Include="Test_RefToLists.fs" />
+    <Compile Include="Test_ListE.fs" />
     <Compile Include="Test_Lab1_eList.fs" />
     <Compile Include="Test_Lab2_eList.fs" />
-    <Compile Include="Test_RefToLists.fs" />
+    <Compile Include="Test_Lab7_eList.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

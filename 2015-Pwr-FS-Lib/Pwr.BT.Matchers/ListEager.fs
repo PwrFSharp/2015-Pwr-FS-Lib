@@ -90,15 +90,20 @@
                 else hBranch (fst2 acc, BodyE(h,snd2 acc)) t
         in hBranch (EmptyE,EmptyE) tapeListE
 
-    let rec (|@) fstTapeLE sndTapeLE =
+    let rec (@) fstTapeLE sndTapeLE =
         let rec hAppend acc =
             function
             |(EmptyE,EmptyE) -> eRev acc
             |(BodyE( h1, t1),BodyE( h2, t2 )) -> hAppend (BodyE( h1 , acc )) ( t1, BodyE( h2, t2 ))
             |(BodyE( h, t ),EmptyE) -> hAppend (BodyE( h , acc )) ( t, EmptyE)
             |(EmptyE,BodyE( h, t )) -> hAppend (BodyE( h , acc )) (EmptyE , t)
-            |_ -> eRev acc
         in hAppend EmptyE (fstTapeLE,sndTapeLE)
 
-//    let rec eMergeBraid fstTapeListE sndTapeListE =
-        
+    let rec eMergeBraid fstTapeListE sndTapeListE =
+        let rec hMerge acc=
+            function
+            |(EmptyE,EmptyE) -> eRev acc
+            |(BodyE( h1, t1),BodyE( h2, t2 )) -> hMerge (BodyE( h2, BodyE( h1, acc ))) (t1,t2)
+            |(BodyE( h, t ),EmptyE) -> (eRev acc) @ (BodyE(h,t))
+            |(EmptyE,BodyE( h, t )) -> (eRev acc) @ (BodyE(h,t))
+        in hMerge EmptyE (fstTapeListE,sndTapeListE)
