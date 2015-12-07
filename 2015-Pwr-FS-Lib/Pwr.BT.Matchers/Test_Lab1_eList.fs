@@ -177,7 +177,7 @@
       let tapeTup3 = (3.,2.,5.)
         
       let _expectedVal = 5.
-      let _reachedVal = third3 tapeTup3
+      let _reachedVal = thrd3 tapeTup3
     
       let _reachedLogic = _expectedVal = _reachedVal
     
@@ -188,7 +188,7 @@
       let tapeTup3 = ("ab",2.,3)
         
       let _expectedVal = 3
-      let _reachedVal = third3 tapeTup3
+      let _reachedVal = thrd3 tapeTup3
     
       let _reachedLogic = _expectedVal = _reachedVal
     
@@ -199,7 +199,7 @@
       let tapeTup3 = (0,1,'a')
         
       let _expectedVal = 'a'
-      let _reachedVal = third3 tapeTup3
+      let _reachedVal = thrd3 tapeTup3
     
       let _reachedLogic = _expectedVal = _reachedVal
     
@@ -211,6 +211,42 @@
       let tapeEndE = BodyE( 8, EmptyE )
 
       let _expectedVal =  BodyE( 4, BodyE( 5, BodyE( 6, BodyE( 7, BodyE( 8, EmptyE ) ))))
+      let _reachedVal = genListIncl tapeBeginE tapeEndE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let genListIncl_Int_Int_2() =
+      let tapeBeginE = BodyE( 4, EmptyE )
+      let tapeEndE = BodyE( 4, EmptyE )
+
+      let _expectedVal =  BodyE( 4, EmptyE )
+      let _reachedVal = genListIncl tapeBeginE tapeEndE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let genListIncl_Int_Int_3() =
+      let tapeBeginE = BodyE( 4, EmptyE )
+      let tapeEndE = BodyE( 5, EmptyE )
+
+      let _expectedVal =  BodyE( 4, BodyE( 5, EmptyE ) )
+      let _reachedVal = genListIncl tapeBeginE tapeEndE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let genListIncl_Int_Int_4() =
+      let tapeBeginE = BodyE( 5, EmptyE )
+      let tapeEndE = BodyE( 4, EmptyE )
+
+      let _expectedVal = EmptyE
       let _reachedVal = genListIncl tapeBeginE tapeEndE
     
       let _reachedLogic = _expectedVal = _reachedVal

@@ -23,6 +23,22 @@
 //                else hGenList (BodyE( hd, acc)) BodyE( hd + 1, EmptyE )
 //        in hGenList EmptyE tapeBeginE 
 
+// WORK
+    let rec eLength tapeListE =
+        let rec hLength acc=
+            function
+            |EmptyE ->acc
+            |BodyE(h,t) -> hLength (acc+1) t
+        in hLength 0 tapeListE
+
+    //NOT_WORK
+//    let rec eLength tapeListE =
+//        let rec hLength acc=
+//            function
+//            |EmptyE ->acc
+//            |BodyE(h,t) -> hLength acc+1 t
+//        in hLength 0 tapeListE
+
      ///////////////////// ********** 2 ********** /////////////////////
 
     let rec genListInclMatchList tapeBeginE tapeEndE =
@@ -41,7 +57,7 @@
             |BodyE(hd,_) -> 
                 if hd > eHead tapeEndE then eRev acc
                 else hGenList (BodyE( hd, acc)) (BodyE( hd + 1, EmptyE ))
-        in hGenList EmptyE tapeBeginE 
+        in hGenList EmptyE
 
 
 

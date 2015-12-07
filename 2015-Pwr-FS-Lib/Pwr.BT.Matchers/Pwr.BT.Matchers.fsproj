@@ -62,8 +62,9 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListEager.fs" />
+    <Compile Include="Numeric_Operations.fs" />
     <Compile Include="Tuple_Operations.fs" />
+    <Compile Include="ListEager.fs" />
     <Compile Include="ListOfList.fs" />
     <None Include="packages.config" />
     <Compile Include="Predicates.fs" />
@@ -86,9 +87,11 @@
     <None Include="Scripts\load-project.fsx" />
     <None Include="Scripts\load-references-debug.fsx" />
     <None Include="Scripts\load-project-debug.fsx" />
-    <Compile Include="Test_RefToLists.fs" />
-    <Compile Include="Test_Lab1_eList.fs" />
+    <Compile Include="Test_Tuples_Operations.fs" />
     <Compile Include="ConsultationsQuestions.fs" />
+    <Compile Include="Test_Lab1_eList.fs" />
+    <Compile Include="Test_Lab2_eList.fs" />
+    <Compile Include="Test_RefToLists.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

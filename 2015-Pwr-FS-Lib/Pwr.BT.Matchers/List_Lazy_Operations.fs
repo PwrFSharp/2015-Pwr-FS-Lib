@@ -30,7 +30,6 @@
         |h::t -> foldLeft f (f acc h) t
         |[]   -> acc
 
-
     let rec foldLeftTwo f acc (l1,l2) =
         match (l1,l2) with 
         |(h1::t1,h2::t2) -> foldLeftTwo f (f acc (f h1 h2)) (t1,t2)

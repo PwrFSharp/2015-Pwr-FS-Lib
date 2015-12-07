@@ -21,7 +21,6 @@
         match l with 
         |h::t -> foldLeft f (f acc h) t 
         |[]   -> acc
-
     
     let rec rev aList =
         let rec rIHelp(aListH,acc) =
@@ -92,12 +91,11 @@
 //                if List.head hList1 = List.head hList2 then helpS(List.tail hList1,hList2,hAcc)
 //                else helpS(List.)
 
-
-//    let rec appendTR aList1 aList2 = 
-//        let rec help(tape1,tape2,acc) = 
-//          match tape1,tape2 with
-//          |h1::t1,h2::t2 -> help(t1,tape2,h1::acc)
-//          |[],h2::t2  -> help([],t2,h2::acc)
-//          |[],[] -> rev acc
-//          |_-> []
-//        in help(aList1,aList2,[])
+    let rec (|@) aList1 aList2 = 
+        let rec help(tape1,tape2,acc) = 
+          match tape1,tape2 with
+          |h1::t1,h2::t2 -> help(t1,tape2,h1::acc)
+          |[],h2::t2  -> help([],t2,h2::acc)
+          |[],[] -> rev acc
+          |_-> []
+        in help(aList1,aList2,[])

@@ -1,9 +1,11 @@
 ﻿namespace Pwr.BT.Collections.Own
     module ListEager =
+    open Pwr.BT.Collections.Tuple.Operations
+    open Pwr.BT.Numeric.Operations
 
     type 'a ListE =
-    |EmptyE
-    |BodyE of 'a * ('a ListE)
+        |EmptyE
+        |BodyE of 'a * ('a ListE)
 
     let eHead = 
         function
@@ -63,14 +65,12 @@
             |BodyE( h, t ) -> hMerge (acc^ h^ eHead lEInfix) t
         in hMerge "" lETape
 
-//    let rec genListIncl tapeBeginE tapeEndE =
-//        let rec hGenList acc =
-//            function
-//            |EmptyE -> BodyE(-1,EmptyE)
-//            |_ -> 
-//                if eHead tapeBeginE = eHead tapeEndE then acc
-//                else hGenList BodyE( eHead tapeBeginE, acc) BodyE( (eHead tapeBeginE) +1, EmptyE )
-//        in hGenList EmptyE tapeBeginE
+    let rec eSize tapeListE =
+        let rec hLength acc=
+            function
+            |EmptyE ->acc
+            |BodyE(h,t) -> hLength (acc+1) t
+        in hLength 0 tapeListE
 
     let rec genListIncl tapeBeginE tapeEndE =
         let rec hGenList acc =
@@ -81,3 +81,24 @@
                 else hGenList (BodyE( hd, acc)) (BodyE( hd + 1, EmptyE ))
         in hGenList EmptyE tapeBeginE 
 
+    let rec eBranchByEven tapeListE =
+        let rec hBranch acc =
+           function
+            |EmptyE -> (eRev (fst2 acc),eRev (snd2 acc))
+            |BodyE( h, t ) ->
+                if isEven h then hBranch (BodyE( h,fst2 acc),snd2 acc) t
+                else hBranch (fst2 acc, BodyE(h,snd2 acc)) t
+        in hBranch (EmptyE,EmptyE) tapeListE
+
+    let rec (|@) fstTapeLE sndTapeLE =
+        let rec hAppend acc =
+            function
+            |(EmptyE,EmptyE) -> eRev acc
+            |(BodyE( h1, t1),BodyE( h2, t2 )) -> hAppend (BodyE( h1 , acc )) ( t1, BodyE( h2, t2 ))
+            |(BodyE( h, t ),EmptyE) -> hAppend (BodyE( h , acc )) ( t, EmptyE)
+            |(EmptyE,BodyE( h, t )) -> hAppend (BodyE( h , acc )) (EmptyE , t)
+            |_ -> eRev acc
+        in hAppend EmptyE (fstTapeLE,sndTapeLE)
+
+//    let rec eMergeBraid fstTapeListE sndTapeListE =
+        
