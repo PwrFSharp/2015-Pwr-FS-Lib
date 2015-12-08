@@ -7,7 +7,7 @@
     open NUnit.Framework.Constraints
     open Pwr.BT.Types
     open Pwr.BT.Collections.List.Iter
-    open Pwr.BT.Collections.Own.ListEager
+    open Pwr.BT.Collections.Own.ListEager.Atomic
     open Pwr.BT.Collections.Tuple.Operations
 
     [<Test>]

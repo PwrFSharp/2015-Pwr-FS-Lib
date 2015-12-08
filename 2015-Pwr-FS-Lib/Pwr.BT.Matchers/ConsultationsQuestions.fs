@@ -1,6 +1,6 @@
 ﻿namespace Pwr.BT.Consultations.Questions
     module ConsultationsQuestions =
-    open Pwr.BT.Collections.Own.ListEager
+    open Pwr.BT.Collections.Own.ListEager.Atomic
 
     ///////////////////// ********** 1 ********** /////////////////////
     // WORK

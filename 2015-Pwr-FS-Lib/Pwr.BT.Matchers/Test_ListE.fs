@@ -7,8 +7,9 @@
     open NUnit.Framework.Constraints
     open Pwr.BT.Types
     open Pwr.BT.Collections.List.Iter
-    open Pwr.BT.Collections.Own.ListEager
+    open Pwr.BT.Collections.Own.ListEager.Atomic
     open Pwr.BT.Collections.Tuple.Operations
+    open Pwr.BT.Numeric.Predicates
 
     [<Test>]
     let eConcat_ListE_ListE_1() =
@@ -59,12 +60,36 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
-    let eContains_ListE_ListE_4() =
-      let fstTapeListE = EmptyE
-      let sndTapeListE = BodyE(5,BodyE(1,EmptyE))
+    let eContains_ListE_ListE_1() =
+      let tapeListE = EmptyE
+      let el = 5.
               
-      let _expectedVal = BodyE(5,BodyE(1,EmptyE))
-      let _reachedVal = fstTapeListE @ sndTapeListE
+      let _expectedVal = false
+      let _reachedVal = eContains el tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eContains_ListE_ListE_2() =
+      let tapeListE = BodyE(5.,BodyE(1.,BodyE(1.,BodyE(5.,EmptyE))))
+      let el = 5.
+              
+      let _expectedVal = true
+      let _reachedVal = eContains el tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eContains_ListE_ListE_3() =
+      let tapeListE = BodyE(5.,BodyE(1.,BodyE(1.,BodyE(5.,EmptyE))))
+      let el = 2.
+              
+      let _expectedVal = false
+      let _reachedVal = eContains el tapeListE
     
       let _reachedLogic = _expectedVal = _reachedVal
     
@@ -98,6 +123,28 @@
               
       let _expectedVal = BodyE(6.,BodyE(7.,EmptyE))
       let _reachedVal = eMap eSum tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eFilter_isDividend_ListE_1() =
+      let tapeListE = BodyE(20,BodyE(21,BodyE(25,BodyE(30,BodyE(40,EmptyE)))))
+              
+      let _expectedVal = BodyE(20,BodyE(30,BodyE(40,EmptyE)))
+      let _reachedVal = eFilter isDividend10 tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eFilter_isEven_ListE_1() =
+      let tapeListE = BodyE(3,BodyE(6,BodyE(8,BodyE(9,BodyE(13,EmptyE)))))
+              
+      let _expectedVal = BodyE(6,BodyE(8,EmptyE))
+      let _reachedVal = eFilter isEven tapeListE
     
       let _reachedLogic = _expectedVal = _reachedVal
     

@@ -1,7 +1,7 @@
-﻿namespace Pwr.BT.Collections.Own
-    module ListEager =
+﻿namespace Pwr.BT.Collections.Own.ListEager
+    module Atomic =
     open Pwr.BT.Collections.Tuple.Operations
-    open Pwr.BT.Numeric.Operations
+    open Pwr.BT.Numeric.Predicates
 
     type 'a ListE =
         |EmptyE
@@ -21,6 +21,15 @@
         function
         |EmptyE -> true
         |_ -> false
+
+    let rec eContains el tape =
+        let rec hContains acc =
+            function
+            |EmptyE -> acc
+            |BodyE( h, t ) ->
+                if h = el then hContains true t
+                else hContains acc t
+        in hContains false tape
 
     let rec eRev eTape=
         let rec hRev acc =
@@ -155,3 +164,13 @@
             |EmptyE -> eRev acc
             |BodyE( h, t ) -> hMap f (BodyE( f h, acc )) t
         in hMap f EmptyE tapeE
+
+    let rec eFilter f tapeE =
+        let rec hFilter f acc =
+            function
+            |EmptyE -> eRev acc
+            |BodyE( h, t ) ->
+                if f h then hFilter f (BodyE( h, acc )) t
+                else hFilter f acc t
+        in hFilter f EmptyE tapeE
+            
