@@ -188,3 +188,64 @@
       let _reachedLogic = _expectedVal = _reachedVal
     
       Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eMerge_ListE_ListE_1() =
+      let fstTapeListE = BodyE( 5, BodyE( 4, BodyE( 3, BodyE( 2, BodyE( 1, EmptyE ) ) ) ) )
+      let sndTapeListE = BodyE( 6, EmptyE )
+             
+      let _expectedVal = BodyE( 5, BodyE( 4, BodyE( 3, BodyE( 2, BodyE( 1, BodyE( 6, EmptyE ) ) ) ) ) )
+      let _reachedVal = eMerge fstTapeListE sndTapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eMerge_ListE_ListE_2() =
+      let fstTapeListE = BodyE( 6, EmptyE )
+      let sndTapeListE = BodyE( 5, BodyE( 4, BodyE( 3, BodyE( 2, BodyE( 1, EmptyE ) ) ) ) )
+                         
+      let _expectedVal = BodyE( 6, BodyE( 5, BodyE( 4, BodyE( 3, BodyE( 2, BodyE( 1, EmptyE ) ) ) ) ) )
+      let _reachedVal = eMerge fstTapeListE sndTapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eMerge_ListE_ListE_3() =
+      let fstTapeListE = EmptyE
+      let sndTapeListE = EmptyE
+                         
+      let _expectedVal = EmptyE
+      let _reachedVal = eMerge fstTapeListE sndTapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eMerge_ListE_ListE_4() =
+      let fstTapeListE = BodyE( 1, BodyE( 2, EmptyE ) )
+      let sndTapeListE = EmptyE
+                         
+      let _expectedVal = BodyE( 1, BodyE( 2, EmptyE ) )
+      let _reachedVal = eMerge fstTapeListE sndTapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eMerge_ListE_ListE_5() =
+      let fstTapeListE = EmptyE
+      let sndTapeListE = BodyE( 1, BodyE( 2, EmptyE ) )
+                         
+      let _expectedVal = BodyE( 1, BodyE( 2, EmptyE ) )
+      let _reachedVal = eMerge fstTapeListE sndTapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+

@@ -146,3 +146,12 @@
                 else if h < (eHead pivotE) then hBranchWithPivot (accHigher,BodyE( h, accLower )) t
                 else hBranchWithPivot (accHigher,accLower) t
         in hBranchWithPivot (EmptyE,EmptyE) tapeListE
+
+    let eMerge tapeListE pivotE = tapeListE @ pivotE
+
+    let rec eMap f tapeE=
+        let rec hMap f acc =
+            function
+            |EmptyE -> eRev acc
+            |BodyE( h, t ) -> hMap f (BodyE( f h, acc )) t
+        in hMap f EmptyE tapeE
