@@ -6,8 +6,6 @@
     open NUnit.Framework
     open NUnit.Framework.Constraints
     open Pwr.BT.Types
-    open Pwr.BT.Collections.List.Iter
-    open Pwr.BT.Collections.ReferencesToLists
     open Pwr.BT.Collections.Own.ListEager
     open Pwr.BT.Collections.Tuple.Operations
 
@@ -87,7 +85,7 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
-    let mergeBraid_ListE_ListE_1() =
+    let eMergeBraid_ListE_ListE_1() =
       let fstTapeListE = BodyE(5,BodyE(4,BodyE(3,BodyE(2,EmptyE))))
       let sndTapeListE = BodyE(1,BodyE(2,BodyE(3,BodyE(4,BodyE(5,BodyE(6,EmptyE))))))
               
@@ -99,7 +97,7 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
-    let mergeBraid_ListE_ListE_2() =
+    let eMergeBraid_ListE_ListE_2() =
       let fstTapeListE = BodyE(5,BodyE(4,BodyE(3,BodyE(2,EmptyE))))
       let sndTapeListE = EmptyE
               
@@ -111,7 +109,7 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
-    let mergeBraid_ListE_ListE_3() =
+    let eMergeBraid_ListE_ListE_3() =
       let fstTapeListE = EmptyE
       let sndTapeListE = EmptyE
               
@@ -123,12 +121,56 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
-    let mergeBraid_ListE_ListE_4() =
+    let eMergeBraid_ListE_ListE_4() =
       let fstTapeListE = EmptyE
       let sndTapeListE = BodyE(5,BodyE(4,BodyE(3,BodyE(2,EmptyE))))
               
       let _expectedVal = BodyE(5,BodyE(4,BodyE(3,BodyE(2,EmptyE))))
       let _reachedVal = eMergeBraid fstTapeListE sndTapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eRev_ListE_1() =
+      let tapeListE = BodyE(5,BodyE(4,BodyE(3,BodyE(2,EmptyE))))
+              
+      let _expectedVal = BodyE(2,BodyE(3,BodyE(4,BodyE(5,EmptyE))))
+      let _reachedVal = eRev tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eRev_ListE_2() =
+      let tapeListE = EmptyE
+              
+      let _expectedVal = EmptyE
+      let _reachedVal = eRev tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eRev_ListE_3() =
+      let tapeListE = BodyE( 1, EmptyE )
+              
+      let _expectedVal = BodyE( 1, EmptyE )
+      let _reachedVal = eRev tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eRev_ListE_4() =
+      let tapeListE = BodyE( 1, BodyE( 2, EmptyE ) )
+              
+      let _expectedVal = BodyE( 2, BodyE( 1, EmptyE ) )
+      let _reachedVal = eRev tapeListE
     
       let _reachedLogic = _expectedVal = _reachedVal
     

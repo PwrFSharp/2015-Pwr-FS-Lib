@@ -7,9 +7,6 @@
     open NUnit.Framework.Constraints
     open Pwr.BT.Types
     open Pwr.BT.Collections.List.Lazy.Oper
-    open Pwr.BT.Collections.List.Iter
-    open Pwr.BT.Collections.ReferencesToLists
-    open Pwr.BT.Matchers.ListOfLists
     open Pwr.BT.Collections.List.Oper
 
     [<Test>]
@@ -170,7 +167,7 @@
       let eList6 = [eList4;eList5]
  
       let _expectedVal = [1;2;3;4;-1;-2;-3;-4;5;6;7;8;-5;-6;-7;-8]
-      let _reachedVal = foldLeftTwo (append) [] (eList3,eList6)
+      let _reachedVal = foldLeftTwo (|@) [] (eList3,eList6)
     
       let _reachedLogic = _expectedVal = _reachedVal
     

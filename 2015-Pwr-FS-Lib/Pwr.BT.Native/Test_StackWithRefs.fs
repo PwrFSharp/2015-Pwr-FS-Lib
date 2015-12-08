@@ -3,7 +3,6 @@
     
     open NUnit.Framework
     open Pwr.BT.Collections.Stack.OperRef
-    open Pwr.BT.Types
 
     [<Test>]
     let Functors_PushbackTreeRef() =
@@ -44,29 +43,6 @@
     
       Assert.True(_reachedLogic)
 
-    [<Test>]
-    let Functors_Count4() =
-      let tapeli = [Empty;Node(2,Empty,Node(3,Empty,Empty));Empty;Empty]
-      let tapeliRef = ref tapeli
-        
-      let _expectedVal = 4
-      let _reachedVal = count tapeliRef
-    
-      let _reachedLogic = _expectedVal = _reachedVal
-    
-      Assert.True(_reachedLogic)
-
-    [<Test>]
-    let Functors_Count1() =
-      let tapeli = [Node(2,Empty,Node(3,Empty,Empty))]
-      let tapeliRef = ref tapeli
-        
-      let _expectedVal = 1
-      let _reachedVal = count tapeliRef
-    
-      let _reachedLogic = _expectedVal = _reachedVal
-    
-      Assert.True(_reachedLogic)
 
     [<Test>]
     let Functors_Count0() =
@@ -79,6 +55,31 @@
       let _reachedLogic = _expectedVal = _reachedVal
     
       Assert.True(_reachedLogic)
+//
+//
+//    [<Test>]
+//    let Functors_Count4() =
+//      let tapeli = [Empty;Node(2,Empty,Node(3,Empty,Empty));Empty;Empty]
+//      let tapeliRef = ref tapeli
+//        
+//      let _expectedVal = 4
+//      let _reachedVal = count tapeliRef
+//    
+//      let _reachedLogic = _expectedVal = _reachedVal
+//    
+//      Assert.True(_reachedLogic)
+//
+//    [<Test>]
+//    let Functors_Count1() =
+//      let tapeli = [Node(2,Empty,Node(3,Empty,Empty))]
+//      let tapeliRef = ref tapeli
+//        
+//      let _expectedVal = 1
+//      let _reachedVal = count tapeliRef
+//    
+//      let _reachedLogic = _expectedVal = _reachedVal
+//    
+//      Assert.True(_reachedLogic)
 //
 //    [<Test>]
 //    let Functors_Back() =

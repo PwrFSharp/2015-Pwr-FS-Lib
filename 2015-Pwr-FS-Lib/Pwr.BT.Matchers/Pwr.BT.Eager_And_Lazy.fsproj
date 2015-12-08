@@ -11,7 +11,7 @@
     <AssemblyName>Pwr.BT.Matchers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Pwr.BT.Matchers</Name>
+    <Name>Pwr.BT.Eager_And_Lazy</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,33 +62,20 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Numeric_Operations.fs" />
-    <Compile Include="Tuple_Operations.fs" />
-    <Compile Include="ListEager.fs" />
-    <Compile Include="ListOfList.fs" />
-    <None Include="packages.config" />
-    <Compile Include="Predicates.fs" />
-    <Compile Include="Types.fs" />
-    <Compile Include="List_Operations.fs" />
-    <Compile Include="List_Lazy_Operations.fs" />
-    <Compile Include="List_Iterators.fs" />
-    <Compile Include="ListRefs.fs" />
-    <Compile Include="Stack.fs" />
-    <Compile Include="StackRefs.fs" />
-    <Compile Include="Tree.fs" />
-    <Compile Include="Test_Stack_Types_Native.fs" />
-    <Compile Include="Test_StackWithRefs.fs" />
-    <Compile Include="Test_StackWithTypes.fs" />
-    <Compile Include="Test_Tree_Operations.fs" />
-    <Compile Include="Currying.fs" />
-    <Compile Include="UnCurrying.fs" />
-    <Compile Include="Test_LazyLists.fs" />
     <None Include="Scripts\load-references.fsx" />
     <None Include="Scripts\load-project.fsx" />
     <None Include="Scripts\load-references-debug.fsx" />
     <None Include="Scripts\load-project-debug.fsx" />
+    <Compile Include="Types.fs" />
+    <Compile Include="Numeric_Operations.fs" />
+    <Compile Include="Tuple_Operations.fs" />
+    <Compile Include="List_Iterators.fs" />
+    <Compile Include="List_Operations.fs" />
+    <Compile Include="List_Lazy_Operations.fs" />
+    <Compile Include="ListEager.fs" />
+    <None Include="packages.config" />
     <Compile Include="ConsultationsQuestions.fs" />
-    <Compile Include="Test_RefToLists.fs" />
+    <Compile Include="Test_LazyLists.fs" />
     <Compile Include="Test_ListE.fs" />
     <Compile Include="Test_Lab1_eList.fs" />
     <Compile Include="Test_Lab2_eList.fs" />

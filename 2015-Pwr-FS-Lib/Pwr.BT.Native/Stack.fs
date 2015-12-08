@@ -1,5 +1,6 @@
 ﻿namespace Pwr.BT.Collections.Stack
     module Oper =
+    open Pwr.BT
     open Pwr.BT.Collections.List.Iter
 
     let pushSR(aStack,aElement) =

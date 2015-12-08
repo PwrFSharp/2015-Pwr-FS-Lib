@@ -2,10 +2,8 @@
     module OperRef =
     open Pwr.BT.Collections.List
     open Pwr.BT.Types
-    open Pwr.BT.Collections.Stack
+    open Pwr.BT.Collections.List.Oper
     open Pwr.BT.Collections.List.Iter
-    open Pwr.BT.Collections
-    open Pwr.BT.Collections.Own
 
     let pushRef aStack aElement =
         aStack:=rev(aElement::(rev !aStack))
@@ -37,7 +35,6 @@
         match !aStack with
         |[] -> true
         |_ -> List.head (rev !aStack)
-
 
     let popAndBack aStack =
         let copy = !aStack;

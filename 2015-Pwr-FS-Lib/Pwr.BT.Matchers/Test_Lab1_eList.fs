@@ -6,8 +6,6 @@
     open NUnit.Framework
     open NUnit.Framework.Constraints
     open Pwr.BT.Types
-    open Pwr.BT.Collections.List.Iter
-    open Pwr.BT.Collections.ReferencesToLists
     open Pwr.BT.Collections.Own.ListEager
     open Pwr.BT.Collections.Tuple.Operations
 

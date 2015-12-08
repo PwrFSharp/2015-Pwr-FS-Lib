@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pwr.BT.Matchers", "Pwr.BT.Matchers\Pwr.BT.Matchers.fsproj", "{2DA9565B-3AC2-48C8-BFCB-98E822D0D458}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pwr.BT.Eager_And_Lazy", "Pwr.BT.Matchers\Pwr.BT.Eager_And_Lazy.fsproj", "{2DA9565B-3AC2-48C8-BFCB-98E822D0D458}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pwr.BT.Native", "Pwr.BT.Native\Pwr.BT.Native.fsproj", "{68254616-A147-4118-A736-2701D9C3EDFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2DA9565B-3AC2-48C8-BFCB-98E822D0D458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DA9565B-3AC2-48C8-BFCB-98E822D0D458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DA9565B-3AC2-48C8-BFCB-98E822D0D458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68254616-A147-4118-A736-2701D9C3EDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68254616-A147-4118-A736-2701D9C3EDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68254616-A147-4118-A736-2701D9C3EDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68254616-A147-4118-A736-2701D9C3EDFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

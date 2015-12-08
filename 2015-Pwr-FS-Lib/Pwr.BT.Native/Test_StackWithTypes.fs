@@ -1,11 +1,12 @@
 ﻿namespace Pwr.BT.Test
     module Test_StackWithTypes =
+
     open NUnit.Framework
     open Pwr.BT.Types
-    open Pwr.BT.Collections.List.Iter
     open Pwr.BT.Collections.List.Oper
     open Pwr.BT.Collections.Stack.Oper
     open Pwr.BT.Collections.Stack.OperRef
+    open Pwr.BT.Collections.List.Iter
 
     [<Test>]
     let Functors_PushBackAR() =
