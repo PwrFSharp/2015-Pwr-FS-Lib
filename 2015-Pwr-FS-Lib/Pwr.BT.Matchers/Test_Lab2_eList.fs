@@ -175,3 +175,64 @@
       let _reachedLogic = _expectedVal = _reachedVal
     
       Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eBranchBy10y5Even_ListE_ListE2_1() =
+      let tapeListE = BodyE(20,BodyE(21,BodyE(25,BodyE(30,BodyE(40,EmptyE)))))
+        
+      let _fstExpectedVal2 = BodyE(20,BodyE(30,BodyE(40,EmptyE)))
+      let _sndExpectedVal2 = BodyE(20,BodyE(25,BodyE(30,BodyE(40,EmptyE))))
+      let _thrdExpectedVal2 = BodyE(21,EmptyE)
+      
+      let _expectedVal = (_fstExpectedVal2,_sndExpectedVal2,_thrdExpectedVal2)
+      let _reachedVal = eBranchBy10y5Even tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eBranchBy10y5Even_ListE_ListE2_2() =
+      let tapeListE = BodyE(20,BodyE(40,BodyE(60,BodyE(100,EmptyE))))
+        
+      let _fstExpectedVal2 = BodyE(20,BodyE(40,BodyE(60,BodyE( 100, EmptyE ))))
+      let _sndExpectedVal2 = BodyE(20,BodyE(40,BodyE(60,BodyE( 100, EmptyE ))))
+      let _thrdExpectedVal2 = EmptyE
+      
+      let _expectedVal = (_fstExpectedVal2,_sndExpectedVal2,_thrdExpectedVal2)
+      let _reachedVal = eBranchBy10y5Even tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eBranchBy10y5Even_ListE_ListE2_3() =
+      let tapeListE = BodyE(25,BodyE(45,BodyE(65,BodyE(105,EmptyE))))
+        
+      let _fstExpectedVal2 = EmptyE
+      let _sndExpectedVal2 = BodyE(25,BodyE(45,BodyE(65,BodyE(105,EmptyE))))
+      let _thrdExpectedVal2 = EmptyE
+      
+      let _expectedVal = (_fstExpectedVal2,_sndExpectedVal2,_thrdExpectedVal2)
+      let _reachedVal = eBranchBy10y5Even tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eBranchBy10y5Even_ListE_ListE2_4() =
+      let tapeListE = EmptyE
+        
+      let _fstExpectedVal2 = EmptyE
+      let _sndExpectedVal2 = EmptyE
+      let _thrdExpectedVal2 = EmptyE
+      
+      let _expectedVal = (_fstExpectedVal2,_sndExpectedVal2,_thrdExpectedVal2)
+      let _reachedVal = eBranchBy10y5Even tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+

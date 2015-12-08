@@ -90,12 +90,22 @@
                 else hBranch (fst2 acc, BodyE(h,snd2 acc)) t
         in hBranch (EmptyE,EmptyE) tapeListE
 
+    let rec eBranchBy10y5Even tapeListE =
+        let rec hBranch10y5 acc =
+            function
+            |EmptyE -> (eRev (fst3 acc),eRev (snd3 acc),eRev (thrd3 acc))
+            |BodyE( h, t ) ->
+                if isDividend10 h then hBranch10y5 ( BodyE( h, (fst3 acc) ), BodyE( h, (snd3 acc) ), thrd3 acc) t
+                else if isDividend5 h then hBranch10y5 ( fst3 acc , BodyE( h, snd3 acc ), thrd3 acc) t
+                else hBranch10y5 ( fst3 acc , snd3 acc , BodyE( h, thrd3 acc)) t
+        in hBranch10y5 (EmptyE,EmptyE,EmptyE) tapeListE
+
     let rec (@) fstTapeLE sndTapeLE =
         let rec hAppend acc =
             function
             |(EmptyE,EmptyE) -> eRev acc
             |(BodyE( h1, t1),BodyE( h2, t2 )) -> hAppend (BodyE( h1 , acc )) ( t1, BodyE( h2, t2 ))
-            |(BodyE( h, t ),EmptyE) -> hAppend (BodyE( h , acc )) ( t, EmptyE)
+            |(BodyE( h, t ),EmptyE ) -> hAppend (BodyE( h , acc )) ( t, EmptyE)
             |(EmptyE,BodyE( h, t )) -> hAppend (BodyE( h , acc )) (EmptyE , t)
         in hAppend EmptyE (fstTapeLE,sndTapeLE)
 
