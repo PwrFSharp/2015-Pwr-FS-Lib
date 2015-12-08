@@ -100,6 +100,16 @@
                 else hBranch10y5 ( fst3 acc , snd3 acc , BodyE( h, thrd3 acc)) t
         in hBranch10y5 (EmptyE,EmptyE,EmptyE) tapeListE
 
+    let rec eBranchByIdxEven3 tapeListE =
+        let rec hBranchIdx acc idx =
+            function
+            |EmptyE -> (eRev (fst3 acc),eRev (snd3 acc),eRev (thrd3 acc))
+            |BodyE( h, t ) ->
+                if isMod3Eq0 idx then hBranchIdx (BodyE( h, fst3 acc ), snd3 acc, thrd3 acc) (idx+1) t
+                else if isMod3Eq1 idx then hBranchIdx (fst3 acc,BodyE( h, snd3 acc ),thrd3 acc) (idx+1) t
+                else hBranchIdx (fst3 acc,snd3 acc,BodyE( h, thrd3 acc )) (idx+1) t
+        in hBranchIdx (EmptyE,EmptyE,EmptyE) 0 tapeListE
+
     let rec (@) fstTapeLE sndTapeLE =
         let rec hAppend acc =
             function

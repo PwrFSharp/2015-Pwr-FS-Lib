@@ -12,5 +12,6 @@
       "../Test_LazyLists.fs"
       "../Test_ListE.fs"
       "../Test_Lab1_eList.fs"
-      "../Test_Lab2_eList.fs"
       "../Test_Lab7_eList.fs"
+      "../Test_Lab2_eList.fs"
+      "../Test_Lab3_eList.fs"

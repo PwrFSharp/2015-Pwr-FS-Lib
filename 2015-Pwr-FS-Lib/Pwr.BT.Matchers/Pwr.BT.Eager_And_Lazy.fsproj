@@ -78,8 +78,9 @@
     <Compile Include="Test_LazyLists.fs" />
     <Compile Include="Test_ListE.fs" />
     <Compile Include="Test_Lab1_eList.fs" />
-    <Compile Include="Test_Lab2_eList.fs" />
     <Compile Include="Test_Lab7_eList.fs" />
+    <Compile Include="Test_Lab2_eList.fs" />
+    <Compile Include="Test_Lab3_eList.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
