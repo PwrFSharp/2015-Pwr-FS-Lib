@@ -82,32 +82,32 @@
         in hGenList EmptyE tapeBeginE 
 
     let rec eBranchByEven tapeListE =
-        let rec hBranch acc =
+        let rec hBranch (accEven,accOdd) =
            function
-            |EmptyE -> (eRev (fst2 acc),eRev (snd2 acc))
+            |EmptyE -> (eRev accEven,eRev accOdd)
             |BodyE( h, t ) ->
-                if isEven h then hBranch (BodyE( h,fst2 acc),snd2 acc) t
-                else hBranch (fst2 acc, BodyE(h,snd2 acc)) t
+                if isEven h then hBranch (BodyE( h,accEven),accOdd) t
+                else hBranch (accEven, BodyE(h,accOdd) ) t
         in hBranch (EmptyE,EmptyE) tapeListE
 
     let rec eBranchBy10y5Even tapeListE =
-        let rec hBranch10y5 acc =
+        let rec hBranch10y5 (modEq10,modEq5,modOdd) =
             function
-            |EmptyE -> (eRev (fst3 acc),eRev (snd3 acc),eRev (thrd3 acc))
+            |EmptyE -> (eRev modEq10,eRev modEq5,eRev modOdd)
             |BodyE( h, t ) ->
-                if isDividend10 h then hBranch10y5 ( BodyE( h, (fst3 acc) ), BodyE( h, (snd3 acc) ), thrd3 acc) t
-                else if isDividend5 h then hBranch10y5 ( fst3 acc , BodyE( h, snd3 acc ), thrd3 acc) t
-                else hBranch10y5 ( fst3 acc , snd3 acc , BodyE( h, thrd3 acc)) t
+                if isDividend10 h then hBranch10y5 ( BodyE( h, modEq10 ), BodyE( h, modEq5 ), modOdd ) t
+                else if isDividend5 h then hBranch10y5 ( modEq10 , BodyE( h, modEq5 ), modOdd ) t
+                else hBranch10y5 ( modEq10 , modEq5 , BodyE( h, modOdd)) t
         in hBranch10y5 (EmptyE,EmptyE,EmptyE) tapeListE
 
     let rec eBranchByIdxEven3 tapeListE =
-        let rec hBranchIdx acc idx =
+        let rec hBranchIdx (modEq0,modEq1,modEq2) idx =
             function
-            |EmptyE -> (eRev (fst3 acc),eRev (snd3 acc),eRev (thrd3 acc))
+            |EmptyE -> (eRev modEq0,eRev modEq1,eRev modEq2)
             |BodyE( h, t ) ->
-                if isMod3Eq0 idx then hBranchIdx (BodyE( h, fst3 acc ), snd3 acc, thrd3 acc) (idx+1) t
-                else if isMod3Eq1 idx then hBranchIdx (fst3 acc,BodyE( h, snd3 acc ),thrd3 acc) (idx+1) t
-                else hBranchIdx (fst3 acc,snd3 acc,BodyE( h, thrd3 acc )) (idx+1) t
+                if isMod3Eq0 idx then hBranchIdx (BodyE( h, modEq0 ), modEq1, modEq2) (idx+1) t
+                else if isMod3Eq1 idx then hBranchIdx (modEq0,BodyE( h, modEq1 ),modEq2) (idx+1) t
+                else hBranchIdx (modEq0,modEq1,BodyE( h, modEq2 )) (idx+1) t
         in hBranchIdx (EmptyE,EmptyE,EmptyE) 0 tapeListE
 
     let rec (@) fstTapeLE sndTapeLE =
@@ -127,3 +127,22 @@
             |(BodyE( h, t ),EmptyE) -> (eRev acc) @ (BodyE(h,t))
             |(EmptyE,BodyE( h, t )) -> (eRev acc) @ (BodyE(h,t))
         in hMerge EmptyE (fstTapeListE,sndTapeListE)
+
+    let rec eSumBraid fstTapeListE sndTapeListE =
+        let rec hSumBraid acc =
+            function
+            |(EmptyE,EmptyE) -> eRev acc
+            |(BodyE( h, t ),EmptyE) -> hSumBraid (BodyE( h, acc )) (t,EmptyE)
+            |(EmptyE,BodyE( h, t )) -> hSumBraid (BodyE( h, acc )) (EmptyE,t)
+            |(BodyE( h1, t1 ),BodyE( h2, t2 )) -> hSumBraid (BodyE( h1+h2, acc )) (t1,t2)
+        in hSumBraid (EmptyE) (fstTapeListE,sndTapeListE)
+
+    let rec eBranchByPivot tapeListE pivotE =
+        let rec hBranchWithPivot (accHigher,accLower) =
+            function
+            |EmptyE -> (eRev accHigher, eRev accLower)
+            |BodyE( h, t )->
+                if h > (eHead pivotE) then hBranchWithPivot (BodyE( h, accHigher), accLower) t
+                else if h < (eHead pivotE) then hBranchWithPivot (accHigher,BodyE( h, accLower )) t
+                else hBranchWithPivot (accHigher,accLower) t
+        in hBranchWithPivot (EmptyE,EmptyE) tapeListE
