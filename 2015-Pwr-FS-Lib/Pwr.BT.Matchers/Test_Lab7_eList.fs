@@ -24,7 +24,7 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
-    let mergeBraid_ListE_ListE_3() =
+    let mergeBraid_ListE_ListE_2() =
       let fstTapeListE = BodyE(5,BodyE(4,BodyE(3,BodyE(2,EmptyE))))
       let sndTapeListE = BodyE(1,BodyE(2,BodyE(3,BodyE(4,BodyE(5,BodyE(6,EmptyE))))))
               
@@ -49,6 +49,28 @@
     [<Test>]
     let powiel_ListE_2() =
       let tapeListE = BodyE(0,EmptyE)
+              
+      let _expectedVal = EmptyE
+      let _reachedVal = powiel tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let powiel_ListE_3() =
+      let tapeListE = BodyE(7,EmptyE)
+              
+      let _expectedVal = BodyE(7,BodyE(7,BodyE(7,BodyE(7,BodyE(7,BodyE(7,BodyE(7,EmptyE)))))))
+      let _reachedVal = powiel tapeListE
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let powiel_ListE_4() =
+      let tapeListE = BodyE(-4,EmptyE)
               
       let _expectedVal = EmptyE
       let _reachedVal = powiel tapeListE

@@ -73,6 +73,8 @@
     <Compile Include="List_Operations.fs" />
     <Compile Include="ListEager.fs" />
     <Compile Include="ListEager_Functionals.fs" />
+    <Compile Include="ListLazy.fs" />
+    <Compile Include="ListLazy_Functionals.fs" />
     <Compile Include="eNumericOperations.fs" />
     <None Include="packages.config" />
     <Compile Include="ConsultationsQuestions.fs" />
@@ -82,8 +84,9 @@
     <Compile Include="Test_Lab4_eList.fs" />
     <Compile Include="Test_NumericE.fs" />
     <Compile Include="Test_ListE.fs" />
-    <Compile Include="Test_Lab7_eList.fs" />
     <Compile Include="Test_Ex1_eList.fs" />
+    <Compile Include="Test_Lab7_eList.fs" />
+    <Compile Include="Test_Lab7_lList.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

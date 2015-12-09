@@ -71,7 +71,7 @@
 
     let rec eDuplicate el multipl =
         let rec hDupl acc hMulti=
-            if hMulti = 0 then acc
+            if hMulti <= 0 then acc
             else hDupl (BodyE( el, acc )) (hMulti-1)
         in hDupl EmptyE multipl
 
