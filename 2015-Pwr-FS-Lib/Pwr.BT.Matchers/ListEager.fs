@@ -173,4 +173,20 @@
                 if f h then hFilter f (BodyE( h, acc )) t
                 else hFilter f acc t
         in hFilter f EmptyE tapeE
+
+    let rec eStickListWithIdxAsc tapeListE=
+        let rec hStick acc idx = 
+            function
+            |EmptyE -> eRev acc
+            |BodyE( h, t ) -> hStick ( BodyE(( h, idx), acc) ) (idx+1) t
+        in hStick EmptyE 0 tapeListE
+
+    let rec eStickListWithIdxDesc tapeListE=
+        let rec hStick acc idx = 
+            function
+            |EmptyE -> acc
+            |BodyE( h, t ) -> hStick ( BodyE(( h, idx), acc) ) (idx+1) t
+        in hStick EmptyE 0 (eRev tapeListE)
+
+//    let stickIdx idx = fun x-> (x,idx)
             

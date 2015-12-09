@@ -129,6 +129,94 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
+    let eMap_eAdd3_ListE_1() =
+      let tapeListE = BodyE(5,BodyE( 4, BodyE( 3, BodyE( 2, EmptyE ) ) ))
+              
+      let _expectedVal = BodyE(8,BodyE( 7, BodyE( 6, BodyE( 5, EmptyE ) ) ))
+      let _reachedVal = eMap (fun x-> x+3) tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eMap_eStickListWithIdxAsc_ListE_1() =
+      let tapeListE = BodyE( BodyE(5,BodyE(1,BodyE(1,BodyE(4,EmptyE)))), EmptyE )
+              
+      let _expectedVal = BodyE( BodyE((5,0),BodyE((1,1),BodyE((1,2), BodyE((4,3), EmptyE ) ))), EmptyE )
+      let _reachedVal = eMap eStickListWithIdxAsc tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eStickListWithIdxAsc_ListE_1() =
+      let tapeListE = BodyE(5,BodyE(1,BodyE(1,BodyE(4,EmptyE))))
+              
+      let _expectedVal = BodyE((5,0),BodyE((1,1),BodyE((1,2), BodyE((4,3), EmptyE ) )))
+      let _reachedVal = eStickListWithIdxAsc tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eStickListWithIdxAsc_ListE_2() =
+      let tapeListE = EmptyE
+              
+      let _expectedVal = EmptyE
+      let _reachedVal = eStickListWithIdxAsc tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eStickListWithIdxAsc_ListE_3() =
+      let tapeListE = BodyE( 1., EmptyE )
+              
+      let _expectedVal = BodyE(( 1.,0), EmptyE )
+      let _reachedVal = eStickListWithIdxAsc tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eStickListWithIdxDesc_ListE_1() =
+      let tapeListE = BodyE(5,BodyE(1,BodyE(1,BodyE(4,EmptyE))))
+              
+      let _expectedVal = BodyE((5,3),BodyE((1,2),BodyE((1,1), BodyE((4,0), EmptyE ) )))
+      let _reachedVal = eStickListWithIdxDesc tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eStickListWithIdxDesc_ListE_2() =
+      let tapeListE = EmptyE
+              
+      let _expectedVal = EmptyE
+      let _reachedVal = eStickListWithIdxDesc tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let eStickListWithIdxDesc_ListE_3() =
+      let tapeListE = BodyE( 1., EmptyE )
+              
+      let _expectedVal = BodyE(( 1.,0), EmptyE )
+      let _reachedVal = eStickListWithIdxDesc tapeListE 
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
     let eFilter_isDividend_ListE_1() =
       let tapeListE = BodyE(20,BodyE(21,BodyE(25,BodyE(30,BodyE(40,EmptyE)))))
               

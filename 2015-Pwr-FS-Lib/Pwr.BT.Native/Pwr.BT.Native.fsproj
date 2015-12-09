@@ -50,13 +50,14 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Compile Include="Currying.fs" />
+    <Compile Include="UnCurrying.fs" />
     <Compile Include="Types.fs" />
     <Compile Include="List_Iterators.fs" />
     <Compile Include="List_Operations.fs" />
     <Compile Include="StackRefs.fs" />
     <Compile Include="Stack.fs" />
-    <Compile Include="Test_StackWithTypes.fs" />
-    <Compile Include="Test_StackWithRefs.fs" />
+    <Compile Include="List_Lazy_Operations.fs" />
     <Content Include="packages.config" />
     <Compile Include="ListOfList.fs" />
     <Compile Include="Predicates.fs" />
@@ -65,8 +66,9 @@
     <Compile Include="Test_Stack_Types_Native.fs" />
     <Compile Include="Test_Tree_Operations.fs" />
     <Compile Include="Test_RefToLists.fs" />
-    <Compile Include="Currying.fs" />
-    <Compile Include="UnCurrying.fs" />
+    <Compile Include="Test_StackWithRefs.fs" />
+    <Compile Include="Test_StackWithTypes.fs" />
+    <Compile Include="Test_LazyLists.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
