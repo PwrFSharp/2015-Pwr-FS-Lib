@@ -52,6 +52,9 @@
             |BodyE( h, t ) -> hPartOrd ( acc && h < eHead comparedListE ) t
         in hPartOrd true tapeListE
 
+//    let rec eFlatten tapeListE =
+        
+
     let rec eToNormal eList=
         let rec hNormal acc=
             function
@@ -65,6 +68,12 @@
             |[] -> EmptyE
             |hd:: tl -> BodyE( hd, eToEager tl )
         in hEager EmptyE nList
+
+    let rec eDuplicate el multipl =
+        let rec hDupl acc hMulti=
+            if hMulti = 0 then acc
+            else hDupl (BodyE( el, acc )) (hMulti-1)
+        in hDupl EmptyE multipl
 
     let rec eMergInSepS lETape lEInfix=
         let rec hMerge acc =
@@ -188,5 +197,18 @@
             |BodyE( h, t ) -> hStick ( BodyE(( h, idx), acc) ) (idx+1) t
         in hStick EmptyE 0 (eRev tapeListE)
 
-//    let stickIdx idx = fun x-> (x,idx)
+    let rec eFoldLeft f acc tapeListE =
+        let rec hFold hAcc =
+            function
+            |EmptyE -> eRev hAcc
+            |BodyE( h, t ) -> hFold (BodyE( f h, hAcc )) t
+        in hFold acc tapeListE
+
+    let rec eFoldLeftForFlat f acc tapeListE =
+        let rec hFold hAcc =
+            function
+            |EmptyE -> eRev hAcc
+            |BodyE( h, t ) -> hFold (f (eRev h) hAcc) t
+        in hFold acc tapeListE
+
             

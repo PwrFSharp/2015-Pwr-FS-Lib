@@ -73,6 +73,20 @@
             |BodyE( h, t ) -> hMap f (BodyE( f h, acc )) t
         in hMap f EmptyE tapeE
 
+    //////////////// ************ 4 ************** //////////////////////
+
+
+//    let eFoldLeft_isEven_listE_listE_1() =
+//      let tapeListE = BodyE(3,BodyE(6,BodyE(8,BodyE(9,BodyE(13,EmptyE)))))
+//              
+//      let _expectedVal = BodyE(9,BodyE(36,BodyE( 64, BodyE( 81, BodyE( 169,EmptyE ) ) )))
+//      let _reachedVal = eFoldLeft (fun x-> pow 2 x) tapeListE
+//    
+//      let _reachedLogic = _expectedVal = _reachedVal
+//    
+//      Assert.True(_reachedLogic)
+
+
 
 
 

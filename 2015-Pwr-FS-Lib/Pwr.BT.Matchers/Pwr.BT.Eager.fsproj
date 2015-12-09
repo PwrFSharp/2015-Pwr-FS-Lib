@@ -80,9 +80,10 @@
     <Compile Include="Test_Lab2_eList.fs" />
     <Compile Include="Test_Lab3_eList.fs" />
     <Compile Include="Test_Lab4_eList.fs" />
-    <Compile Include="Test_Lab7_eList.fs" />
     <Compile Include="Test_NumericE.fs" />
     <Compile Include="Test_ListE.fs" />
+    <Compile Include="Test_Lab7_eList.fs" />
+    <Compile Include="Test_Ex1_eList.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

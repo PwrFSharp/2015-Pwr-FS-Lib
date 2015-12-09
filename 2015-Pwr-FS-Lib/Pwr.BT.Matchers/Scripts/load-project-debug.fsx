@@ -14,6 +14,7 @@
       "../Test_Lab2_eList.fs"
       "../Test_Lab3_eList.fs"
       "../Test_Lab4_eList.fs"
-      "../Test_Lab7_eList.fs"
       "../Test_NumericE.fs"
       "../Test_ListE.fs"
+      "../Test_Lab7_eList.fs"
+      "../Test_Ex1_eList.fs"

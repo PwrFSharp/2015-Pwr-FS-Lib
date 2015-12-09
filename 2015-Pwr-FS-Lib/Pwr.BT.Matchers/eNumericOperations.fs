@@ -3,7 +3,7 @@
     open Atomic
     open Pwr.BT.Collections.Tuple.Operations
 
-    let rec pow baseVal exponentVal =
+    let rec pow exponentVal baseVal =
         let rec hPow acc hExp =
             if hExp > 0 then hPow (baseVal*acc) (hExp-1)
             else acc
@@ -17,5 +17,5 @@
             let rec helpBinToDec acc =
                 function 
                 |EmptyE -> acc
-                |BodyE( h, t ) -> helpBinToDec ((fst2 h)* (pow baseVal (snd2 h))+ acc) t
+                |BodyE( h, t ) -> helpBinToDec ((fst2 h)* (pow (snd2 h) baseVal)+ acc) t
             in helpBinToDec 0 valuedTape

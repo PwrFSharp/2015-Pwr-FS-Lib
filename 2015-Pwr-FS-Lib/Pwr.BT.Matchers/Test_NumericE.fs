@@ -10,7 +10,7 @@
       let exponentVal = 3
               
       let _expectedVal = 8
-      let _reachedVal = pow baseVal exponentVal
+      let _reachedVal = pow exponentVal baseVal
     
       let _reachedLogic = _expectedVal = _reachedVal
     
@@ -22,7 +22,7 @@
       let exponentVal = 0
               
       let _expectedVal = 1
-      let _reachedVal = pow baseVal exponentVal
+      let _reachedVal = pow exponentVal baseVal
     
       let _reachedLogic = _expectedVal = _reachedVal
     
@@ -34,7 +34,7 @@
       let exponentVal = 1
               
       let _expectedVal = 2
-      let _reachedVal = pow baseVal exponentVal
+      let _reachedVal = pow exponentVal baseVal
     
       let _reachedLogic = _expectedVal = _reachedVal
     
@@ -46,7 +46,7 @@
       let exponentVal = 8
               
       let _expectedVal = 0
-      let _reachedVal = pow baseVal exponentVal
+      let _reachedVal = pow exponentVal baseVal
     
       let _reachedLogic = _expectedVal = _reachedVal
     
