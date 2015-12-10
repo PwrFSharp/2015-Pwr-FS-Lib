@@ -52,7 +52,7 @@
             |BodyL( h, t ) -> hPartOrd ( acc && h < lHead comparedListE ) (t())
         in hPartOrd true tapeListL
 
-    let rec lToNormal lList=
+    let rec lToNative lList=
         let rec hNormal acc=
             function
             |EmptyL -> acc

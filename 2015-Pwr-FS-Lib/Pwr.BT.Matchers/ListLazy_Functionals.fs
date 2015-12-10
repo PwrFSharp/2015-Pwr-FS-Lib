@@ -11,4 +11,4 @@
             |BodyL( h, t ) -> hPowiel (BodyL( lDuplicate h h, fun() ->acc )) (t())
         in hPowiel EmptyL tapeListL
 
-    let eFlatten tapeListE = (lFoldLeftForFlat (@) EmptyL tapeListE)
+    let lFlatten tapeListE = (lFoldLeftForFlat (@) EmptyL tapeListE)

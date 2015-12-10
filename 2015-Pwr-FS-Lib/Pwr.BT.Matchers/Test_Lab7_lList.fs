@@ -10,7 +10,7 @@
       let tapeListE = BodyL(1,fun()->BodyL(2,fun()->BodyL(3,fun()->EmptyL)))
               
       let _expectedVal = [1;2;2;3;3;3]
-      let _reachedVal = lToNormal (lPowiel tapeListE)
+      let _reachedVal = lToNative (lPowiel tapeListE)
     
       let _reachedLogic = _expectedVal = _reachedVal
     

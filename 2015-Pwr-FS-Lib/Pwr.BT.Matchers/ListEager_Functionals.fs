@@ -12,3 +12,17 @@
         in hPowiel EmptyE tapeListE
 
     let eFlatten tapeListE = (eFoldLeftForFlat (@) EmptyE tapeListE)
+            
+    let rec insert tapeListE el = 
+        if tapeListE = EmptyE then BodyE( el, EmptyE )
+        else
+            let rec hInsert acc =
+                function
+                |EmptyE -> eRev acc
+                |BodyE( h, EmptyE ) ->
+                    if h <= el then hInsert ( BodyE( el, BodyE( h, acc ) ) ) EmptyE
+                    else hInsert ( BodyE( h, BodyE( el, acc ) ) ) EmptyE
+                |BodyE( h, t ) ->
+                    if h <= el then hInsert ( BodyE( h, acc ) ) t
+                    else hInsert ((eRev t) @ (BodyE( h, BodyE( el, acc )))) EmptyE
+            in hInsert EmptyE tapeListE
