@@ -15,3 +15,36 @@
       let _reachedLogic = _expectedVal = _reachedVal
     
       Assert.True(true)
+
+    [<Test>]
+    let powiel_ListE_2() =
+      let tapeListE = BodyL(0,fun()->EmptyL)
+              
+      let _expectedVal = []
+      let _reachedVal = lToNative (lPowiel tapeListE)
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let powiel_ListE_3() =
+      let tapeListE = BodyL(7,fun()->EmptyL)
+              
+      let _expectedVal = [7;7;7;7;7;7;7]
+      let _reachedVal = lToNative (lPowiel tapeListE)
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
+    let powiel_ListE_4() =
+      let tapeListE = BodyL(-4,fun()->EmptyL)
+              
+      let _expectedVal = []
+      let _reachedVal = lToNative (lPowiel tapeListE)
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)

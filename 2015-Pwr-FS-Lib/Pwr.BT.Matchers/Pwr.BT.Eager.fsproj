@@ -78,15 +78,17 @@
     <Compile Include="eNumericOperations.fs" />
     <None Include="packages.config" />
     <Compile Include="ConsultationsQuestions.fs" />
-    <Compile Include="Test_Lab1_eList.fs" />
     <Compile Include="Test_Lab2_eList.fs" />
     <Compile Include="Test_Lab3_eList.fs" />
     <Compile Include="Test_Lab4_eList.fs" />
     <Compile Include="Test_NumericE.fs" />
-    <Compile Include="Test_ListE.fs" />
     <Compile Include="Test_Ex1_eList.fs" />
     <Compile Include="Test_Lab7_eList.fs" />
     <Compile Include="Test_Lab7_lList.fs" />
+    <Compile Include="Test_Lab1_eList.fs" />
+    <Compile Include="Test_Lab1_lList.fs" />
+    <Compile Include="Test_ListE.fs" />
+    <Compile Include="Test_ListL.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

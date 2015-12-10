@@ -176,6 +176,18 @@
       Assert.True(_reachedLogic)
 
     [<Test>]
+    let insert_ListE_El_Filled_EqualToInnerTriple() =
+      let tapeListE = BodyE( 1,BodyE( 3, BodyE( 3, BodyE( 3, BodyE( 6, EmptyE ) ) ) ))
+      let el = 3
+              
+      let _expectedVal = BodyE( 1,BodyE( 3, BodyE( 3, BodyE( 3, BodyE( 3, BodyE( 6, EmptyE ) ) ) ) ))
+      let _reachedVal = insert tapeListE el
+    
+      let _reachedLogic = _expectedVal = _reachedVal
+    
+      Assert.True(_reachedLogic)
+
+    [<Test>]
     let insert_ListE_El_Empty() =
       let tapeListE = EmptyE
       let el = 4

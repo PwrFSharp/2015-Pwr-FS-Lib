@@ -7,7 +7,7 @@
     let rec lPowiel tapeListL =
         let rec hPowiel acc =
             function
-            |EmptyL -> lRev (lFoldLeftForFlat (@) EmptyL acc)
+            |EmptyL -> lFoldLeftForFlat (@) EmptyL acc
             |BodyL( h, t ) -> hPowiel (BodyL( lDuplicate h h, fun() ->acc )) (t())
         in hPowiel EmptyL tapeListL
 

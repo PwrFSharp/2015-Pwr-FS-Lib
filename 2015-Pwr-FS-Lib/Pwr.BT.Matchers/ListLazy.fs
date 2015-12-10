@@ -30,34 +30,33 @@
                 if h = ll then hContains true (t())
                 else hContains acc (t())
         in hContains false tape
+//
+//    let rec lRev lTape=
+//        match lTape with
+//            |EmptyL ->EmptyL
+//            |BodyL( hd, tl ) -> BodyL( hd, fun () ->  lRev (tl())) 
 
-    let rec lRev lTape=
+    let rec lRev eTape=
         let rec hRev acc =
             function
             |EmptyL -> acc
-            |BodyL( hd, tl ) -> hRev (BodyL( hd, fun () -> acc )) (tl())
-        in hRev EmptyL lTape
+            |BodyL( hd, tl ) -> hRev (BodyL( hd, fun()->acc )) (tl())
+        in hRev EmptyL eTape
 
     let rec lSum lList=
-        let rec hSum acc =
-            function
-            |EmptyL -> acc
-            |BodyL (hd,tl) -> hSum (hd+acc) (tl())
-        in hSum 0. lList
+        match lList with
+            |EmptyL -> 0
+            |BodyL (hd,tl) -> hd+(lSum (tl()))
 
     let rec lPartOrdCompare tapeListL comparedListE =
-        let rec hPartOrd acc =
-            function
-            |EmptyL -> acc
-            |BodyL( h, t ) -> hPartOrd ( acc && h < lHead comparedListE ) (t())
-        in hPartOrd true tapeListL
+            match tapeListL with
+            |EmptyL -> true
+            |BodyL( h, t ) ->  ( h < (lHead comparedListE)) && (lPartOrdCompare (t()) comparedListE)
 
     let rec lToNative lList=
-        let rec hNormal acc=
-            function
-            |EmptyL -> acc
-            |BodyL (hd,tl) -> hNormal (hd::acc) (tl())
-        in hNormal [] lList
+        match lList with
+            |EmptyL -> []
+            |BodyL (hd,tl) -> hd::(lToNative (tl()))
 
 //    let rec lToEager nList=
 //        let rec hEager acc =
@@ -66,11 +65,23 @@
 //            |hd:: tl -> BodyL( hd, lToEager (tl()) )
 //        in hEager EmptyL nList
 
-    let rec lDuplicate ll multipl =
-        let rec hDupl acc hMulti=
-            if hMulti <= 0 then acc
-            else hDupl (BodyL( ll, fun () -> acc )) (hMulti-1)
-        in hDupl EmptyL multipl
+//    let rec lDuplicate ll multipl =
+//            if multipl <= 0 then EmptyL
+//            else ( BodyL( ll, lDuplicate ll (hMulti-1) )
+//
+//    let rec lDuplicate2 ll multipl =
+//            if multipl <= 0 then EmptyL
+//            else lDuplicate2 (BodyL( ll, fun () -> acc )) (multipl-1)
+ 
+    let rec lDuplicate el multipl =
+            if multipl <= 0 then EmptyL
+            else (BodyL( el, fun()->lDuplicate el (multipl-1) ))
+
+//    let rec lDuplicate el multipl =
+//        let rec hDupl acc hMulti=
+//            if hMulti <= 0 then acc
+//            else hDupl (BodyL( el, fun()->acc )) (hMulti-1)
+//        in hDupl EmptyL multipl
 
 //    let rec lMergInSepS lETape lEInfix=
 //        let rec hMerge acc =
@@ -164,21 +175,17 @@
 
     let lMerge tapeListL pivotE = tapeListL @ pivotE
 
-    let rec lMap f tapeE=
-        let rec hMap f acc =
-            function
-            |EmptyL -> lRev acc
-            |BodyL( h, t ) -> hMap f (BodyL( f h, fun ()->acc )) (t())
-        in hMap f EmptyL tapeE
+    let rec lMap f=
+        function
+        |EmptyL -> EmptyL
+        |BodyL( h, t ) -> (BodyL( f h, fun ()-> lMap f (t())))
 
-    let rec lFilter f tapeE =
-        let rec hFilter f acc =
+    let rec lFilter f =
             function
-            |EmptyL -> lRev acc
+            |EmptyL -> EmptyL
             |BodyL( h, t ) ->
-                if f h then hFilter f (BodyL( h, fun ()->acc )) (t())
-                else hFilter f acc (t())
-        in hFilter f EmptyL tapeE
+                if f h then (BodyL( h, fun ()-> lFilter f (t()) ))
+                else lFilter f (t())
 
     let rec lStickListWithIdxAsc tapeListL=
         let rec hStick acc idx = 
@@ -194,12 +201,15 @@
             |BodyL( h, t ) -> hStick ( BodyL(( h, idx), fun ()->acc) ) (idx+1) (t())
         in hStick EmptyL 0 ( lRev tapeListL)
 
-    let rec lFoldLeft f acc tapeListL =
-        let rec hFold hAcc =
-            function
-            |EmptyL -> lRev hAcc
-            |BodyL( h, t ) -> hFold (BodyL( f h, fun ()->hAcc )) (t())
-        in hFold acc tapeListL
+    let rec lFoldLeftOneArg f acc tapeListL =
+        match tapeListL with
+        |EmptyL -> lRev acc
+        |BodyL( h, t ) -> lFoldLeftOneArg (f) (BodyL( f h, fun()->acc)) (t())
+
+//    let rec fold_left f acc l =      
+//    match l with         
+//    h::t -> fold_left f (f acc h) t       
+//    | []   -> acc;; 
 
     let rec lFoldLeftForFlat f acc tapeListL =
         let rec hFold hAcc =

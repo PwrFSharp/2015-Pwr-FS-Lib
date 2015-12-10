@@ -210,5 +210,3 @@
             |EmptyE -> eRev hAcc
             |BodyE( h, t ) -> hFold (f (eRev h) hAcc) t
         in hFold acc tapeListE
-
-            
