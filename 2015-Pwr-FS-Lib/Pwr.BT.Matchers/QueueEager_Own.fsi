@@ -1,8 +1,7 @@
 ﻿namespace Pwr.BT.Collections.Own.QueueEager
 
-type 'a queueE = EmptyQ |BodyQ of 'a * 'a queueE
-
 module QueueEager_Own =
+    type 'a queueE = EmptyQ |BodyQ of 'a * 'a queueE
     val enqueue : 'a * 'a queueE -> 'a queueE
     val dequeue : 'a queueE -> 'a queueE
     val empty : 'a queueE
