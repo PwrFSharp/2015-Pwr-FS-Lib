@@ -1,0 +1,46 @@
+﻿Paradygmaty programowania - ćwiczenia
+Lista 2
+
+1. Jaka będzie głębokość stosu w Scali, a jaka w OCamlu dla wywołania evenR(3) (funkcja
+ zdefiniowana na wykładzie)?
+Poniższe funkcje należy napisać w obu językach: OCaml i Scala (wykorzystując
+mechanizm dopasowania do wzorca w zadaniach 4-6).
+
+2. Liczby Fibonacciego są zdefiniowane następująco:
+ f(0) = 0
+ f(1) = 1
+ f(n+2) = f(n) + f(n+1)
+ Napisz dwie funkcje, które dla danego n znajdują n-tą liczbę Fibonacciego:
+a) opartą bezpośrednio na powyższej definicji,
+b) wykorzystującą rekursję ogonową.
+ Porównaj ich szybkość wykonania, obliczając np. 37-mą liczbę Fibonacciego.
+
+3. Dla zadanej liczby rzeczywistej a oraz dokładności  można znaleźć pierwiastek
+ trzeciego stopnia z a wyliczając kolejne przybliżenia xi
+ tego pierwiastka (metoda
+ Newtona-Raphsona):
+ x0 = a/3 dla a > 1
+ x0 = a dla a ≤ 1
+ xi+1 = xi + (a/xi
+2
+– xi )/3
+ Dokładność jest osiągnięta, jeśli |xi
+3
+– a|   * |a| .
+ Napisz efektywną (wykorzystującą rekursję ogonową) funkcję root3, która dla zadanej
+ liczby a znajduje pierwiastek trzeciego stopnia z dokładnością 1e-15.
+ Uwaga. Pamiętaj, że OCaml nie wykonuje automatycznie żadnych koercji typów.
+
+4. Zwiąż zmienną x z wartością 0 konstruując wzorce, do których mają się dopasować
+ następujące wyrażenia:
+ a) [-2; -1; 0; 1; 2] b) [ (1,2); (0,1) ]
+ Np. dla wyrażenia (true,"hello",0) wymaganym wzorcem jest (_ ,_ ,x).
+
+5. Zdefiniuj funkcję initSegment : 'a list * 'a list -> bool sprawdzającą w czasie liniowym, czy
+ pierwsza lista stanowi początkowy segment drugiej listy. Każda lista jest swoim
+ początkowym segmentem, lista pusta jest początkowym segmentem każdej listy.
+
+6. Zdefiniuj funkcję replaceNth : 'a list * int* 'a -> 'a list, zastępującą n-ty element listy
+ podaną wartością (pierwszy element ma numer 0), np.
+replaceNth ([1;2;3] ,1,5) => [1;5;3]
+ Nie wykorzystuj żadnej funkcji bibliotecznej!

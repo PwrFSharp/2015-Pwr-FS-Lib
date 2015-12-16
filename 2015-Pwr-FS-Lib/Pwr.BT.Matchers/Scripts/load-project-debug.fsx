@@ -23,3 +23,5 @@
       "../Test_Lab1_lList.fs"
       "../Test_ListE.fs"
       "../Test_ListL.fs"
+      "../QueueEager_Own.fs"
+      "../Test_Lab8_eQueue.fs"

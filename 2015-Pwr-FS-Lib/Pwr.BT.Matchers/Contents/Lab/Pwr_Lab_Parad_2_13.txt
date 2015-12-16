@@ -1,0 +1,35 @@
+﻿Paradygmaty programowania, lista 2, 22.10.2015. CZ 13:15.
+
+WAÅ»NE1: Do kaÅ¼dego zadania przygotuj 3-5 testÃ³w sprawdzajÄ…cych poprawnoÅ›Ä‡ dziaÅ‚ania!
+WAÅ»NE2: Nie wolno stosowaÄ‡ funkcji bibliotecznych (np. "length", "reverse", "append") o zÅ‚oÅ¼onoÅ›ci wiÄ™kszej, niÅ¼ O(1).
+        W przypadku, gdy zachodzi koniecznoÅ›Ä‡ ich uÅ¼ycia naleÅ¼y przygotowaÄ‡ wÅ‚asnÄ… implementacjÄ™.
+
+1) Napisz funkcjÄ™ rozdzielajÄ…cÄ… listÄ™ wejÅ›ciowÄ… na trzy podlisty.
+   W pierwszej podliÅ›cie majÄ… znajdowaÄ‡ siÄ™ wszystkie elementy podzielne przez 10.
+   W drugiej podliÅ›cie majÄ… znajdowaÄ‡ siÄ™ wszystkie elementy podzielne przez 5.
+   W trzeciej podliÅ›cie majÄ… znajdowaÄ‡ siÄ™ wszystkie pozostaÅ‚e elementy.
+   PorzÄ…dek elementÃ³w musi byÄ‡ zachowany. Wynik zwrÃ³Ä‡ w postaci trÃ³jki list.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: natrzy [20;21;25;30;40];;
+   wynik    : ([20;30;40],[20;25;30;40],[21])
+
+   Punkty: 10 (jÄ™zyk Ocaml)
+
+2) Napisz funkcjÄ™ zwracajÄ…cÄ… dÅ‚ugoÅ›Ä‡ dowolnej listy. Funkcja ma mieÄ‡ jeden parametr.
+   ZwrÃ³Ä‡ szczegÃ³lnÄ… uwagÄ™ na optymalnoÅ›Ä‡ zÅ‚oÅ¼onoÅ›ci obliczeniowej i pamiÄ™ciowej.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: dlugosc [5;4;3;2];;
+   wynik    : 4
+
+   Punkty: 4 (jÄ™zyk Scala)
+
+3) Napisz funkcjÄ™ odwracajÄ…cÄ… podanÄ… listÄ™. Funkcja ma mieÄ‡ jeden parametr.
+   ZwrÃ³Ä‡ szczegÃ³lnÄ… uwagÄ™ na optymalnoÅ›Ä‡ zÅ‚oÅ¼onoÅ›ci obliczeniowej i pamiÄ™ciowej.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: odwroc [5;4;3;2];;
+   wynik    : [2;3;4;5]
+
+   Punkty: 6 (jÄ™zyk Ocaml)

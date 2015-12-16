@@ -1,0 +1,45 @@
+﻿Paradygmaty programowania - ćwiczenia
+Lista 3
+
+W poniższych zadaniach funkcje należy napisać w obu językach: OCaml i Scala (wykorzystując
+mechanizm dopasowania do wzorca!).
+
+1. Zdefiniuj funkcje a) curry3 i b) uncurry3, przeprowadzające konwersję między zwiniętymi
+ i rozwiniętymi postaciami funkcji od trzech argumentów. Podaj ich typy.
+
+2. Przekształć poniższą rekurencyjną definicję funkcji sumProd, która oblicza jednocześnie
+ sumę i iloczyn listy liczb całkowitych na równoważną definicję nierekurencyjną z
+ jednokrotnym użyciem funkcji bibliotecznej fold_left (Scala – foldLeft lub /: ).
+ OCaml Scala
+let rec sumProd l = def sumProd(xs:List[Int]):(Int,Int) =
+ match l with xs match {
+ h::t -> let (s,p)= sumProd t case h::t => {val (s,p)=sumProd(t)
+ in (h+s,h*p) (h+s,h*p)
+ | [] -> (0,1);; }
+ case Nil => (0,1)
+ }
+
+3. Poniższe dwie wersje funkcji quicksort działają niepoprawnie. Dlaczego?
+ OCaml
+a) let rec quicksort = function
+ [] -> []
+ | [x] -> [x]
+ | xs -> let small = List.filter (fun y -> y < List.hd xs ) xs
+ and large = List.filter (fun y -> y >= List.hd xs ) xs
+ in quicksort small @ quicksort large;;
+
+b) let rec quicksort' = function
+ [] -> []
+ | x::xs -> let small = List.filter (fun y -> y < x ) xs
+ and large = List.filter (fun y -> y > x ) xs
+ in quicksort' small @ (x :: quicksort' large);;
+
+4. Zdefiniuj funkcje sortowania
+a) przez wstawianie z zachowaniem stabilności i złożoności O(n^2)
+ insertionsort : (‘a->‘a->bool) -> ‘a list -> ‘a list .
+b) przez łączenie (scalanie) z zachowaniem stabilności i złożoności O(n lg n)
+ mergesort : (‘a->‘a->bool) -> ‘a list -> ‘a list .
+Pierwszy argument jest funkcją, sprawdzającą porządek. Podaj przykład testu sprawdzającego
+stabilność.
+
+Uwaga! Przypominam, że funkcje List.append i List.length mają złożoność liniową!

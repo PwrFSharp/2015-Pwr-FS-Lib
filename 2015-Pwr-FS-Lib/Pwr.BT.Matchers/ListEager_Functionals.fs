@@ -12,7 +12,7 @@
         in hPowiel EmptyE tapeListE
 
     let eFlatten tapeListE = (eFoldLeftForFlat (@) EmptyE tapeListE)
-            
+         
     let rec insert tapeListE el = 
         if tapeListE = EmptyE then BodyE( el, EmptyE )
         else

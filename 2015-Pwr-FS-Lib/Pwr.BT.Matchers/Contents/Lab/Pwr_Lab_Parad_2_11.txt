@@ -1,0 +1,35 @@
+﻿Paradygmaty programowania, lista 2, 22.10.2015. CZ 11:15.
+
+WAÅ»NE1: Do kaÅ¼dego zadania przygotuj 3-5 testÃ³w sprawdzajÄ…cych poprawnoÅ›Ä‡ dziaÅ‚ania!
+WAÅ»NE2: Nie wolno stosowaÄ‡ funkcji bibliotecznych (np. "length", "reverse", "append") o zÅ‚oÅ¼onoÅ›ci wiÄ™kszej, niÅ¼ O(1).
+        W przypadku, gdy zachodzi koniecznoÅ›Ä‡ ich uÅ¼ycia naleÅ¼y przygotowaÄ‡ wÅ‚asnÄ… implementacjÄ™.
+
+1) Napisz funkcjÄ™ rozdzielajÄ…cÄ… listÄ™ wejÅ›ciowÄ… na dwie podlisty.
+   W pierwszej podliÅ›cie majÄ… siÄ™ znaleÅºÄ‡ wszystkie elementy o wartoÅ›ciach parzystych.
+   W drugiej podliÅ›cie majÄ… siÄ™ znaleÅºÄ‡ wszystkie elementy o wartoÅ›ciach nieparzystych.
+   PorzÄ…dek elementÃ³w musi byÄ‡ zachowany. Wynik zwrÃ³Ä‡ w postaci pary list.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: podziel [3;6;8;9;13];;
+   wynik    : ([6;8],[3;9;13])
+
+   Punkty: 10 (jÄ™zyk OCaml)
+
+2) Napisz funkcjÄ™ zwracajÄ…cÄ… dÅ‚ugoÅ›Ä‡ dowolnej listy. Funkcja ma mieÄ‡ jeden parametr.
+   ZwrÃ³Ä‡ szczegÃ³lnÄ… uwagÄ™ na optymalnoÅ›Ä‡ zÅ‚oÅ¼onoÅ›ci obliczeniowej i pamiÄ™ciowej.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: dlugosc [5;4;3;2];;
+   wynik    : 4
+
+   Punkty: 4 (jÄ™zyk Scala)
+
+3) Napisz funkcjÄ™ Å‚Ä…czÄ…cÄ… dwie podane listy.
+   Elementy w liÅ›cie wyjÅ›ciowej majÄ… wystÄ™powaÄ‡ naprzemiennie.
+   ZwrÃ³Ä‡ szczegÃ³lnÄ… uwagÄ™ na optymalnoÅ›Ä‡ zÅ‚oÅ¼onoÅ›ci obliczeniowej i pamiÄ™ciowej.
+
+   PrzykÅ‚ad:
+   wywoÅ‚anie: polacz [5;4;3;2] [1;2;3;4;5;6];;
+   wynik    : [5;1;4;2;3;3;2;4;5;6]
+
+   Punkty: 6 (jÄ™zyk Ocaml)

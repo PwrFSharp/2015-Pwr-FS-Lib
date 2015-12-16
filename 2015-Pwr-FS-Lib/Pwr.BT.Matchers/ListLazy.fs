@@ -206,16 +206,9 @@
         |EmptyL -> lRev acc
         |BodyL( h, t ) -> lFoldLeftOneArg (f) (BodyL( f h, fun()->acc)) (t())
 
-//    let rec fold_left f acc l =      
-//    match l with         
-//    h::t -> fold_left f (f acc h) t       
-//    | []   -> acc;; 
-
     let rec lFoldLeftForFlat f acc tapeListL =
         let rec hFold hAcc =
             function
             |EmptyL -> lRev hAcc
             |BodyL( h, t ) -> hFold (f ( lRev h) hAcc) (t())
         in hFold acc tapeListL
-
-            
