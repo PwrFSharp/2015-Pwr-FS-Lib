@@ -89,6 +89,7 @@
     <Compile Include="Test_Lab1_lList.fs" />
     <Compile Include="Test_ListE.fs" />
     <Compile Include="Test_ListL.fs" />
+    <Compile Include="QueueEager_Own.fsi" />
     <Compile Include="QueueEager_Own.fs" />
     <Compile Include="Test_Lab8_eQueue.fs" />
   </ItemGroup>

@@ -1,10 +1,9 @@
 ﻿namespace Pwr.BT.Collections.Own.QueueEager
-    module QueueEager_Own=
-    open Pwr.BT.Collections.List
 
-    type 'a queueE =
-        |EmptyQ
-        |BodyQ of 'a * 'a queueE 
+type 'a queueE =EmptyQ |BodyQ of 'a * 'a queueE 
+
+module QueueEager_Own=
+    open Pwr.BT.Collections.List  
 
     let enqueue (el,que) = BodyQ(el,que)
 
@@ -59,7 +58,6 @@
             |EmptyQ -> Iter.rev acc
             |BodyQ( h, t ) -> hToList (h::acc) t
         in hToList [] (rev que)
-
 
 
 

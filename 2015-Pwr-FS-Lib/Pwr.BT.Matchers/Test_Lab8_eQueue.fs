@@ -7,9 +7,10 @@
     open NUnit.Framework.Constraints
     open Pwr.BT.Types
     open Pwr.BT.Collections.Own.ListEager.Atomic
-    open Pwr.BT.Collections.Own.QueueEager.QueueEager_Own
+    open Pwr.BT.Collections.Own.QueueEager
     open Pwr.BT.Collections.Tuple.Operations
     open Pwr.BT.Collections.Own.ListEager.Functionals
+    open Pwr.BT.Collections.Own.QueueEager.QueueEager_Own
 
     [<Test>]
     let enqueue_El_y_ListE() =
@@ -38,7 +39,7 @@
     let dequeue_queueE_2() =
       let queueE = BodyQ(1,BodyQ(2,BodyQ( 3, BodyQ( 4, EmptyQ ) )))
 
-      let _expectedVal = BodyQ(1,BodyQ(2,BodyQ( 3, EmptyQ )))
+      let _expectedVal = (BodyQ(1,BodyQ(2,BodyQ( 3, EmptyQ ))))
       let _reachedVal = dequeue queueE
     
       let _reachedLogic = _expectedVal = _reachedVal
