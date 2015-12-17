@@ -76,6 +76,8 @@
     <Compile Include="ListLazy.fs" />
     <Compile Include="ListLazy_Functionals.fs" />
     <Compile Include="eNumericOperations.fs" />
+    <Compile Include="QueueEager_Own.fsi" />
+    <Compile Include="QueueEager_Own.fs" />
     <None Include="packages.config" />
     <Compile Include="ConsultationsQuestions.fs" />
     <Compile Include="Test_Lab2_eList.fs" />
@@ -89,8 +91,6 @@
     <Compile Include="Test_Lab1_lList.fs" />
     <Compile Include="Test_ListE.fs" />
     <Compile Include="Test_ListL.fs" />
-    <Compile Include="QueueEager_Own.fsi" />
-    <Compile Include="QueueEager_Own.fs" />
     <Compile Include="Test_Lab8_eQueue.fs" />
   </ItemGroup>
   <PropertyGroup>

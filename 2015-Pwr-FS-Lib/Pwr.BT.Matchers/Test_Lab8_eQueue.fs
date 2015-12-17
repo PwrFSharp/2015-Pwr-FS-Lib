@@ -202,6 +202,18 @@
     
       Assert.True(_reachedLogic)
 
+//    [<Test>]
+//    let get_queueE_Idx_4() =
+//      let inQueue = BodyQ( 1, BodyQ( 2, BodyQ( 3, EmptyQ ) ) )
+//      let idx = -1
+//
+//      let _expectedVal = 3
+//      let _reachedVal = get (idx,inQueue)
+//          
+//      let _reachedLogic = _expectedVal = _reachedVal
+//    
+//      Assert.True(_reachedLogic)
+
     [<Test>]
     let toList_queueE_1() =
       let inQueue = BodyQ( 1, BodyQ( 2, BodyQ( 3, EmptyQ ) ) )

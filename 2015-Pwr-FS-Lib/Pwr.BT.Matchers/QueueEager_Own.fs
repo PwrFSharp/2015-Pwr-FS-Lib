@@ -40,9 +40,10 @@ module QueueEager_Own=
             |BodyQ( h, t ) -> h
         in hTop (rev que)
 
-    let rec get (idx,que) =
+    let rec get (idx:int,que) =
         let rec hGet tape curIdx =
-            if curIdx <> idx then
+            if curIdx < 0 then failwith "From Empty Even Salomon can't pour"
+            else if curIdx <> idx then
                 match tape with
                 |EmptyQ -> failwith "From Empty Even Salomon can't pour"
                 |BodyQ( h, t ) -> hGet t (curIdx+1)
@@ -118,9 +119,10 @@ module QueueEager_Own=
 //            |BodyQ( h, t ) -> h
 //        in hTop (rev que)
 //
-//    let rec get (idx,que) =
+//    let rec get (idx:int,que) =
 //        let rec hGet tape curIdx =
-//            if curIdx <> idx then
+//            if curIdx < 0 then failwith "From Empty Even Salomon can't pour"
+//            else if curIdx <> idx then
 //                match tape with
 //                |EmptyQ -> failwith "From Empty Even Salomon can't pour"
 //                |BodyQ( h, t ) -> hGet t (curIdx+1)
@@ -137,7 +139,7 @@ module QueueEager_Own=
 //            |BodyQ( h, t ) -> hToList (h::acc) t
 //        in hToList [] (rev que)
 //end;;
-
+//
 
 
 
